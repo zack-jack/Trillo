@@ -1,6 +1,7 @@
 /* ==========================================================================
    COLORS
 ============================================================================ */
+
 /* PRIMARY COLORS
 ============================================================================ */
 /*
@@ -8,6 +9,7 @@ Primary: #eb2f64
 Primary light: #FF3366
 Primary dark: #BA265D
 */
+
 /* LIGHT GREYS
 ============================================================================ */
 /*
@@ -16,6 +18,7 @@ Grey light 2: #f4f2f2
 Grey light 3: #f0eeee
 Grey light 4: #ccc
 */
+
 /* DARK GREYS
 ============================================================================ */
 /*
@@ -23,45 +26,64 @@ Grey dark 1: #333
 Grey dark 2: #777
 Grey dark 3: #999
 */
+
 /* ==========================================================================
    BASE STYLING
 ============================================================================ */
+
 /* Global variables */
 :root {
   /* Primary color variables */
   --color-primary: #eb2f64;
   --color-primary-light: #ff3366;
   --color-primary-dark: #ba265d;
+
   /* Light-grey color variables */
   --color-grey-light-1: #faf9f9;
   --color-grey-light-2: #f4f2f2;
   --color-grey-light-3: #f0eeee;
   --color-grey-light-4: #ccc;
+
   /* Dark-grey color variables */
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
-  --color-grey-dark-3: #999; }
+  --color-grey-dark-3: #999;
+}
 
 /* Clears all default browser margin and padding */
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 *,
 *::after,
 *::before {
-  box-sizing: inherit; }
+  // Everything to inherit the border-box from html
+  box-sizing: inherit;
+}
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  // Sets default font size to 10px for easier rem/em calcs
+  font-size: 62.5%; // 1rem = 10px;
+}
 
 body {
+  // Base font styling
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6rem;
   color: var(--color-grey-dark-2);
-  background-image: linear-gradient(to bottom, var(--color-grey-light-1), var(--color-grey-light-3));
+
+  // Background gradient
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-grey-light-1),
+    var(--color-grey-light-3)
+  );
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh; }
+
+  min-height: 100vh;
+}
