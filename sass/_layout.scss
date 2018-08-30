@@ -50,12 +50,19 @@
   /* Sidebar flex properties */
   // 0 grow, 0 shrink, 18% width
   flex: 0 0 18%;
+
+  // Parent container for the side-nav and legal
+  display: flex;
+  flex-direction: column; // Main axis to vertical
+  justify-content: space-between; // Pushes legal text to bottom
 }
 
 /* Hotel view */
 // Right side of container
 .hotel-view {
   background-color: var(--color-white);
+
+  height: 70rem;
 
   /* Hotel-view flex properties */
   // 1 grow
