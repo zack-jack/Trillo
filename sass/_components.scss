@@ -264,3 +264,107 @@
   text-align: center;
   padding: 2.5rem;
 }
+
+/* GALLERY
+============================================================================ */
+
+/* Image gallery */
+.gallery {
+  display: flex;
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* HOTEL OVERVIEW
+============================================================================ */
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2);
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    // Pushes everything after stars to the right
+    margin-right: auto;
+    display: flex;
+  }
+
+  &__star-icon,
+  &__location-icon {
+    // Icon sizing
+    height: 1.75rem;
+    width: 1.75rem;
+
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__location-icon {
+    margin-right: 0.5rem;
+  }
+
+  &__rating {
+    background-color: var(--color-primary);
+    margin-left: 3rem;
+    color: var(--color-white);
+    padding: 0 2.25rem;
+
+    // Fills the whole height
+    align-self: stretch;
+
+    // Centering the rating in the box
+    display: flex;
+    flex-direction: column; // Stacks the rating number on top
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__rating-average {
+    font-size: 2.3rem;
+    font-weight: 300;
+    margin-bottom: 0.4rem;
+  }
+
+  &__rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+}
+
+/* BUTTONS
+============================================================================ */
+
+/* Inline button */
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  // Inherits from parent element: overview__location
+  font-size: inherit;
+
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+}
