@@ -1,0 +1,57 @@
+/* ==========================================================================
+   SITE LAYOUT STYLES
+============================================================================ */
+
+/* SITE CONTAINER
+============================================================================ */
+
+.container {
+  /* If viewport is less than 1200px,
+   it will occupy 100% of the viewport */
+  max-width: 120rem; // 1200px
+  // Centers the container within the body element
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-1);
+
+  min-height: 50rem;
+}
+
+/* HEADER
+============================================================================ */
+
+/* Top bar section along the top of the container */
+.header {
+  height: 7rem; // 70px
+  background-color: var(--color-white);
+  border-bottom: var(--color-grey-light-2);
+}
+
+/* CONTENT
+============================================================================ */
+
+/* Contains the sidebar and hotel-view */
+.content {
+  display: flex;
+}
+
+/* Sidebar */
+// Left side of container
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+
+  /* Sidebar flex properties */
+  // 0 grow, 0 shrink, 18% width
+  flex: 0 0 18%;
+}
+
+/* Hotel view */
+// Right side of container
+.hotel-view {
+  background-color: var(--color-white);
+
+  /* Hotel-view flex properties */
+  // 1 grow
+  // This forces the hotel-view to occupy the remaining space
+  flex: 1;
+}

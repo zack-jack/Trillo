@@ -38,6 +38,9 @@ Grey dark 3: #999
   --color-primary-light: #ff3366;
   --color-primary-dark: #ba265d;
 
+  /* White color variables */
+  --color-white: #fff;
+
   /* Light-grey color variables */
   --color-grey-light-1: #faf9f9;
   --color-grey-light-2: #f4f2f2;
@@ -48,6 +51,10 @@ Grey dark 3: #999
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
+
+  /* Box shadow variables */
+  // large spread, light opacity
+  --shadow-1: 0 2rem 6rem rgba(0, 0, 0, 0.1);
 }
 
 /* Clears all default browser margin and padding */
@@ -79,7 +86,7 @@ body {
   // Background gradient
   background-image: linear-gradient(
     to bottom,
-    var(--color-grey-light-1),
+    var(--color-grey-light-2),
     var(--color-grey-light-3)
   );
   background-size: cover;
