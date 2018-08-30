@@ -122,6 +122,12 @@
     background-color: var(--color-grey-light-2);
   }
 
+  /* Selects active state of all of the direct children of user-nav */
+  & > *:active {
+    color: var(--color-grey-light-2);
+    background-color: var(--color-primary-light);
+  }
+
   /* Holds the icons that are in the top user nav bar */
   &__icon-box {
     position: relative;
@@ -134,6 +140,10 @@
     width: 2.25rem;
 
     fill: var(--color-grey-dark-2);
+
+    &:active {
+      fill: var(--color-grey-light-2);
+    }
   }
 
   /* Circular top right notification counter */

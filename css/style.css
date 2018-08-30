@@ -138,6 +138,7 @@ body {
   align-items: center;
   /* Selects all of the direct children of user-nav */
   /* Selects hover state of all of the direct children of user-nav */
+  /* Selects active state of all of the direct children of user-nav */
   /* Holds the icons that are in the top user nav bar */
   /* Top user nav bar icons */
   /* Circular top right notification counter */
@@ -151,12 +152,17 @@ body {
     align-items: center; }
   .user-nav > *:hover {
     background-color: var(--color-grey-light-2); }
+  .user-nav > *:active {
+    color: var(--color-grey-light-2);
+    background-color: var(--color-primary-light); }
   .user-nav__icon-box {
     position: relative; }
   .user-nav__icon {
     height: 2.25rem;
     width: 2.25rem;
     fill: var(--color-grey-dark-2); }
+    .user-nav__icon:active {
+      fill: var(--color-grey-light-2); }
   .user-nav__notification {
     font-size: 0.8rem;
     height: 1.5rem;
@@ -236,7 +242,7 @@ body {
   /* If viewport is less than 1200px,
    it will occupy 100% of the viewport */
   max-width: 120rem;
-  margin: 8rem auto;
+  margin: 2rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-1);
   min-height: 50rem; }
