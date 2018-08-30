@@ -1,0 +1,176 @@
+/* ==========================================================================
+   COMPONENT STYLES
+============================================================================ */
+
+/* LOGO
+============================================================================ */
+
+.logo {
+  height: 3.25rem;
+  margin-left: 3rem;
+}
+
+/* SEARCH BOX
+============================================================================ */
+
+.search {
+  /* Searchbar flex properties */
+  // 0 grow, 0 shrink, 40% width
+  flex: 0 0 40%;
+
+  // Parent element of the search button
+  display: flex;
+
+  // Centering of the search button icon in the searchbar
+  justify-content: center; // Main axis centering
+  align-items: center; // Cross axis centering
+
+  /* Text field for user input */
+  &__input {
+    /* Input element's font styling is NOT automatically
+       inherited. Must be done manually here. */
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+
+    // Search text box styling
+    background-color: var(--color-grey-light-2);
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 10rem;
+    width: 90%;
+
+    // Negative margin so that the button is on top of the bar
+    margin-right: -3.25rem;
+
+    // Animations
+    transition: all 0.2s;
+
+    // When the search bar is focused, it increases in size (width)
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-3);
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-dark-3);
+    }
+  }
+
+  /* Sibling selector to match the background-color
+  of the button icon to that of the focused search bar
+  background-color */
+  &__input:focus + &__button {
+    background-color: var(--color-grey-light-3);
+  }
+
+  /* Enter button: magnifying glass */
+  &__button {
+    border: none;
+    background-color: var(--color-grey-light-2); //Same as searchbar color
+
+    // Removes any focus styling on the button
+    &:focus {
+      outline: none;
+    }
+
+    // When clicked button moves down some to look like it's being pushed
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  /* Magnifying glass icon */
+  &__icon {
+    // Search icon sizing
+    height: 2rem;
+    width: 2rem;
+    fill: var(--color-grey-dark-3);
+  }
+}
+
+/* TOP USER NAVIGATION BAR
+============================================================================ */
+
+.user-nav {
+  /* Overwrites the header centering so that it
+     stretches vertically to occupy the whole header height */
+  align-self: stretch;
+
+  display: flex;
+
+  // Centering of the user-nav items
+  justify-content: center; // Main axis centering
+  align-items: center; // Cross axis centering
+
+  /* Selects all of the direct children of user-nav */
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+
+    display: flex;
+
+    // Vertical centering of the icons
+    align-items: center; // Cross axis centering
+  }
+
+  /* Selects hover state of all of the direct children of user-nav */
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+
+  /* Holds the icons that are in the top user nav bar */
+  &__icon-box {
+    position: relative;
+  }
+
+  /* Top user nav bar icons */
+  &__icon {
+    // User icons sizing
+    height: 2.25rem;
+    width: 2.25rem;
+
+    fill: var(--color-grey-dark-2);
+  }
+
+  /* Circular top right notification counter */
+  &__notification {
+    font-size: 0.8rem;
+
+    // Circular styling
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+
+    // Circle postioning
+    position: absolute;
+    top: 1.5rem;
+    right: 1.2rem;
+
+    display: flex;
+    // Centering of the notification text
+    justify-content: center; // Main axis centering
+    align-items: center; // Cross axis centering
+  }
+
+  /* User content: photo */
+  &__user-photo {
+    // User photo sizing
+    height: 3.75rem;
+    width: 3.75rem;
+    // Crops photo to a circle
+    border-radius: 50%;
+
+    margin-right: 1rem;
+  }
+
+  /* User content: name */
+  &__user-name {
+    margin-right: 2.5rem;
+  }
+}

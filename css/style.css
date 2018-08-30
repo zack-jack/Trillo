@@ -71,6 +71,114 @@ body {
   min-height: 100vh; }
 
 /* ==========================================================================
+   COMPONENT STYLES
+============================================================================ */
+/* LOGO
+============================================================================ */
+.logo {
+  height: 3.25rem;
+  margin-left: 3rem; }
+
+/* SEARCH BOX
+============================================================================ */
+.search {
+  /* Searchbar flex properties */
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Text field for user input */
+  /* Sibling selector to match the background-color
+  of the button icon to that of the focused search bar
+  background-color */
+  /* Enter button: magnifying glass */
+  /* Magnifying glass icon */ }
+  .search__input {
+    /* Input element's font styling is NOT automatically
+       inherited. Must be done manually here. */
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-grey-light-2);
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 10rem;
+    width: 90%;
+    margin-right: -3.25rem;
+    transition: all 0.2s; }
+    .search__input:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-3); }
+    .search__input::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-dark-3); }
+  .search__input:focus + .search__button {
+    background-color: var(--color-grey-light-3); }
+  .search__button {
+    border: none;
+    background-color: var(--color-grey-light-2); }
+    .search__button:focus {
+      outline: none; }
+    .search__button:active {
+      transform: translateY(2px); }
+  .search__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--color-grey-dark-3); }
+
+/* TOP USER NAVIGATION BAR
+============================================================================ */
+.user-nav {
+  /* Overwrites the header centering so that it
+     stretches vertically to occupy the whole header height */
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Selects all of the direct children of user-nav */
+  /* Selects hover state of all of the direct children of user-nav */
+  /* Holds the icons that are in the top user nav bar */
+  /* Top user nav bar icons */
+  /* Circular top right notification counter */
+  /* User content: photo */
+  /* User content: name */ }
+  .user-nav > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center; }
+  .user-nav > *:hover {
+    background-color: var(--color-grey-light-2); }
+  .user-nav__icon-box {
+    position: relative; }
+  .user-nav__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--color-grey-dark-2); }
+  .user-nav__notification {
+    font-size: 0.8rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    position: absolute;
+    top: 1.5rem;
+    right: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .user-nav__user-photo {
+    height: 3.75rem;
+    width: 3.75rem;
+    border-radius: 50%;
+    margin-right: 1rem; }
+  .user-nav__user-name {
+    margin-right: 2.5rem; }
+
+/* ==========================================================================
    SITE LAYOUT STYLES
 ============================================================================ */
 /* SITE CONTAINER
@@ -88,9 +196,13 @@ body {
 ============================================================================ */
 /* Top bar section along the top of the container */
 .header {
+  font-size: 1.4rem;
   height: 7rem;
   background-color: var(--color-white);
-  border-bottom: var(--color-grey-light-2); }
+  border-bottom: var(--color-grey-light-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 
 /* CONTENT
 ============================================================================ */

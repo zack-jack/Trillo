@@ -22,9 +22,16 @@
 
 /* Top bar section along the top of the container */
 .header {
+  font-size: 1.4rem;
   height: 7rem; // 70px
   background-color: var(--color-white);
   border-bottom: var(--color-grey-light-2);
+
+  // Parent container for the logo, searchbar, and user nav
+  display: flex;
+  // Divides the empty space between the child elements
+  justify-content: space-between; // Horizontal spacing alignment
+  align-items: center; // Vertical alignment
 }
 
 /* CONTENT
