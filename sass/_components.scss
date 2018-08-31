@@ -380,6 +380,73 @@
   }
 }
 
+/* Call to action */
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: var(--color-grey-light-1);
+  cursor: pointer;
+
+  position: relative;
+
+  /* Hides the hidden part since it
+   is positioned outside of the parent element */
+  overflow: hidden;
+
+  /* Selects all child elements of the button */
+  & > * {
+    display: inline-block;
+
+    // Size to fill 100% of parent element
+    height: 100%;
+    width: 100%;
+
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__hidden {
+    position: absolute;
+    padding: 2rem 0rem;
+
+    // Positions the text outside of the button parent element
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to right bottom,
+      var(--color-primary-dark),
+      var(--color-primary-light)
+    );
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__hidden {
+    // Moves the text back into the button parent element
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
 /* DETAIL PARAGRAPH
 ============================================================================ */
 
@@ -525,5 +592,22 @@
     z-index: 0;
 
     color: var(--color-grey-light-3);
+  }
+}
+
+/* CALL TO ACTION
+============================================================================ */
+
+.call-to-action {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__book-now {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+    word-spacing: 0.3rem;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
   }
 }
