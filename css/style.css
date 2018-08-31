@@ -445,12 +445,16 @@ body {
     width: 1rem;
     margin-right: 0.8rem;
     /* Pink color -- older browsers: background-image */
-    /* Pink color -- newer browsers: masks */
-    background-color: var(--color-primary);
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask-image: url(../img/chevron-thin-right.svg);
-    mask-size: cover; }
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
+    /* Pink color -- newer browsers: masks */ }
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      .detail-list__item::before {
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover; } }
 
 /* RECOMMENDATION
 ============================================================================ */
