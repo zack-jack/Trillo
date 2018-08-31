@@ -25,6 +25,12 @@
   justify-content: center; // Main axis centering
   align-items: center; // Cross axis centering
 
+  @media only screen and (max-width: $breakpoint-smallest) {
+    order: 1;
+    flex: 0 0 100%; // Forces the searchbar to wrap to next row
+    background-color: var(--color-grey-light-2);
+  }
+
   /* Text field for user input */
   &__input {
     /* Input element's font styling is NOT automatically
@@ -194,6 +200,12 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  // Lines the nav items in a row instead of column at 900px
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: flex;
+    margin-top: 0;
+  }
+
   // List items
   &__item {
     // Parent element of before pseudo element
@@ -202,6 +214,16 @@
     // Selects all list items except for the last one
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      // Removes margin bottom at 900px
+      @media only screen and (max-width: $breakpoint-medium) {
+        margin-bottom: 0;
+      }
+    }
+
+    // Spreads the nav items out over available space at 900px
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex: 1;
     }
   }
 
@@ -245,6 +267,16 @@
 
     display: flex;
     align-items: center;
+
+    // Centers the content within the box at 900px
+    @media only screen and (max-width: $breakpoint-medium) {
+      justify-content: center;
+    }
+
+    @media only screen and (max-width: $breakpoint-small) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -254,6 +286,13 @@
 
     margin-right: 2rem;
     fill: var(--color-grey-light-1);
+
+    @media only screen and (max-width: $breakpoint-small) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -263,6 +302,10 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: $breakpoint-large) {
+    display: none;
+  }
 }
 
 /* GALLERY
@@ -286,18 +329,40 @@
   align-items: center;
   border-bottom: var(--line-1);
 
+  @media only screen and (max-width: $breakpoint-smallest) {
+    flex-wrap: wrap;
+  }
+
+  & > * {
+    @media only screen and (max-width: $breakpoint-small) {
+      justify-content: center;
+    }
+  }
+
   &__heading {
     font-size: 2.5rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      font-size: 2.25rem;
+      text-align: center;
+      padding: 1.25rem 2rem;
+      width: 100%;
+    }
   }
 
   &__stars {
     // Pushes everything after stars to the right
     margin-right: auto;
     display: flex;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      margin: 1rem 0 2.5rem 0;
+      width: 50%;
+    }
   }
 
   &__star-icon,
@@ -313,6 +378,11 @@
     font-size: 1.2rem;
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      margin: 1rem 0 2.5rem 0;
+      width: 50%;
+    }
   }
 
   &__location-icon {
@@ -323,7 +393,7 @@
     background-color: var(--color-primary);
     margin-left: 3rem;
     color: var(--color-white);
-    padding: 0 2.25rem;
+    padding: 1.25rem 2.25rem;
 
     // Fills the whole height
     align-self: stretch;
@@ -333,17 +403,34 @@
     flex-direction: column; // Stacks the rating number on top
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      padding: 1rem 1.5rem;
+    }
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      margin-left: 0;
+      width: 100%;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: 0.4rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
@@ -476,6 +563,10 @@
     flex: 0 0 50%;
 
     margin-bottom: 1rem;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      font-size: 1.2rem;
+    }
   }
 
   /* Icon before each detail list item */
@@ -509,8 +600,16 @@
   display: flex;
   align-items: center;
 
+  @media only screen and (max-width: $breakpoint-smallest) {
+    flex-wrap: wrap;
+  }
+
   &__count {
     margin-right: auto;
+  }
+
+  &__user {
+    display: flex;
   }
 
   &__user-photo {
@@ -522,7 +621,11 @@
     border: 3px solid var(--color-white);
 
     &:not(:last-child) {
-      margin-right: -1.2rem;
+      margin-right: -1.6rem;
+    }
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      margin-top: 1.5rem;
     }
   }
 }
@@ -537,6 +640,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     position: relative;
@@ -602,6 +710,10 @@
   padding: 3.5rem 0;
   text-align: center;
 
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding: 2.5rem 0;
+  }
+
   &__book-now {
     font-size: 1.8rem;
     font-weight: 300;
@@ -609,5 +721,16 @@
     word-spacing: 0.3rem;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      font-size: 1.7rem;
+      letter-spacing: 0.1rem;
+      word-spacing: 0.2rem;
+    }
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      font-size: 1.5rem;
+      margin: 0 1.5rem 2.5rem 1.5rem;
+    }
   }
 }

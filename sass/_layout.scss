@@ -15,6 +15,13 @@
   box-shadow: var(--shadow-1);
 
   min-height: 50rem;
+
+  // Removes the surrounding background gradient at 1200px
+  @media only screen and (max-width: $breakpoint-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 /* HEADER
@@ -32,6 +39,12 @@
   // Divides the empty space between the child elements
   justify-content: space-between; // Horizontal spacing alignment
   align-items: center; // Vertical alignment
+
+  @media only screen and (max-width: $breakpoint-small) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
+  }
 }
 
 /* CONTENT
@@ -40,6 +53,11 @@
 /* Contains the sidebar and hotel-view */
 .content {
   display: flex;
+
+  // Moves the sidebar navigation to the top at 900px
+  @media only screen and (max-width: $breakpoint-medium) {
+    flex-direction: column;
+  }
 }
 
 /* Sidebar */
@@ -75,6 +93,14 @@
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line-1);
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $breakpoint-small) {
+    flex-direction: column;
+  }
 }
 
 /* Description section */
@@ -83,10 +109,20 @@
   // 0 grow, 0 shrink, 60% width
   flex: 0 0 60%;
 
-  margin-right: 4.5rem;
+  margin-right: 4.5rem; // This should be the same as detail padding
   padding: 3rem;
   background-color: var(--color-white);
   box-shadow: var(--shadow-2);
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding: 2rem;
+    margin-right: 3rem; // This should be the same as detail padding
+  }
+
+  @media only screen and (max-width: $breakpoint-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
 }
 
 .user-reviews {
