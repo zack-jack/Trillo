@@ -55,6 +55,11 @@ Grey dark 3: #999
   /* Box shadow variables */
   // large spread, light opacity
   --shadow-1: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  // large spread, very light opacity
+  --shadow-2: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+
+  /* Dividing line variables */
+  --line-1: 1px solid var(--color-grey-light-2);
 }
 
 /* Clears all default browser margin and padding */

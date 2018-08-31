@@ -25,7 +25,7 @@
   font-size: 1.4rem;
   height: 7rem; // 70px
   background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line-1);
 
   // Parent container for the logo, searchbar, and user nav
   display: flex;
@@ -62,10 +62,33 @@
 .hotel-view {
   background-color: var(--color-white);
 
-  height: 70rem;
-
   /* Hotel-view flex properties */
   // 1 grow
   // This forces the hotel-view to occupy the remaining space
+  flex: 1;
+}
+
+/* Detail section, contains: description and user-reviews*/
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line-1);
+}
+
+/* Description section */
+.description {
+  font-size: 1.4rem;
+  /* Description flex properties */
+  // 0 grow, 0 shrink, 60% width
+  flex: 0 0 60%;
+
+  margin-right: 4.5rem;
+  padding: 3rem;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-2);
+}
+
+.user-reviews {
   flex: 1;
 }
