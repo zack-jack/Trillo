@@ -70,6 +70,7 @@
 
 /* Detail section, contains: description and user-reviews*/
 .detail {
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
@@ -78,7 +79,6 @@
 
 /* Description section */
 .description {
-  font-size: 1.4rem;
   /* Description flex properties */
   // 0 grow, 0 shrink, 60% width
   flex: 0 0 60%;
@@ -91,4 +91,8 @@
 
 .user-reviews {
   flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
